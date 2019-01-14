@@ -9,7 +9,7 @@ var MessagesView = {
   },
   
   renderMessage: function(message) {
-    var newMessage = `<div>${message.username}: ${message.text}</div>`;
+    var newMessage = `<div class='chat'><span class='username'>${message.username}</span>: ${message.text}</div>`;
     if (message.roomname !== undefined) {
       if (Rooms[message.roomname] === undefined) {
         Rooms[message.roomname] = newMessage;        
