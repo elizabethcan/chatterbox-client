@@ -1,3 +1,11 @@
+var input;
+
+var escapeHtml = function(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 var App = {
 
   $spinner: $('.spinner img'),
@@ -21,6 +29,13 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
+      input = data;
+    
+      // PAYLOAD
+      for (var key in input.results) {
+        MessagesView.renderMessage(input.results[key]);
+      }
+      MessagesView.render();
 
       callback();
     });

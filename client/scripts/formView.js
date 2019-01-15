@@ -8,7 +8,6 @@ var FormView = {
 
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
-    event.preventDefault();
     
     // console.log(event.currentTarget[0].value);
     var message = {
@@ -17,6 +16,9 @@ var FormView = {
       roomname: $('select').val()
     };
     Parse.create(message);
+    App.startSpinner();
+    $('#chats').empty();
+    App.fetch(App.stopSpinner);
     console.log('click!');
   },
 

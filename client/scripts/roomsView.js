@@ -7,6 +7,7 @@ var RoomsView = {
     $('body').on('change', '#rooms select', function(event) {
       // console.log(roomList[event.currentTarget.value]);
       $('#chats').html(roomList[event.currentTarget.value]);
+      MessagesView.render();
     });
     $('body').on('click', '#rooms button', function(event) {
       Rooms.add();
