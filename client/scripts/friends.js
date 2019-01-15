@@ -1,3 +1,5 @@
+var friendList = {};
+
 var Friends = {
   toggleStatus: function(friendName) {
     if (!!friendList[friendName]) {
@@ -7,5 +9,4 @@ var Friends = {
     }
     console.log(friendName);
   }
-
 };

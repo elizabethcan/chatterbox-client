@@ -47,18 +47,7 @@
     <script src="client/scripts/messagesView.js"></script>
     <script src="client/scripts/app.js"></script>
     <script>
-      var friendList = {};
       $(() => App.initialize());
-      $('body').on('click', '.username', function(event) {
-        var name = event.currentTarget.innerHTML;
-        Friends.toggleStatus(name);
-      });
-      $('body').on('change', '#rooms select', function(event) {
-        $('#chats').html(Rooms[event.currentTarget.value]);
-      });
-      $('body').on('click', '#rooms button', function(event) {
-        Rooms.add();
-      });
     </script>
   </body>
 </html>

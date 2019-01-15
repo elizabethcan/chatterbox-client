@@ -4,6 +4,13 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
+    $('body').on('change', '#rooms select', function(event) {
+      // console.log(roomList[event.currentTarget.value]);
+      $('#chats').html(roomList[event.currentTarget.value]);
+    });
+    $('body').on('click', '#rooms button', function(event) {
+      Rooms.add();
+    });
   },
 
   render: function() {
