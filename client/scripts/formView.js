@@ -6,9 +6,8 @@ var FormView = {
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
-  handleSubmit: function(event) {
-    // Stop the browser from submitting the form
-    
+  handleSubmit: function(event) {  
+    event.preventDefault();  
     // console.log(event.currentTarget[0].value);
     var message = {
       username: App.username,
@@ -18,6 +17,7 @@ var FormView = {
     Parse.create(message);
     App.startSpinner();
     $('#chats').empty();
+    $('input#message').val('');
     App.fetch(App.stopSpinner);
     console.log('click!');
   },
